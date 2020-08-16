@@ -13,6 +13,7 @@ enum Gender {
   alert,
   male,
   female,
+  sys,
 }
 int height = 180;
 int weight=60;
@@ -80,7 +81,18 @@ class _InputPageState extends State<InputPage> {
                     color: g == Gender.female ? colour : colour1,
                     childW: IconContent(
                         text: 'Female', icon: FontAwesomeIcons.venus),
-                  ))
+                  )),
+                  Expanded(
+                      child: ReusableCard(
+                        tap: () {
+                          setState(() {
+                            g = Gender.sys;
+                          });
+                        },
+                        color: g == Gender.sys ? colour : colour1,
+                        childW: IconContent(
+                            text: 'Transgender', icon: FontAwesomeIcons.transgender),
+                      ))
                 ],
               ),
               ReusableCard(

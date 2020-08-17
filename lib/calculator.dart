@@ -9,12 +9,23 @@ class Calculator{
     return _bmi.toStringAsFixed(1);
   }
   String getResults(){
-    if(_bmi>=25){
+    if(_bmi>=25 && _bmi<30 ){
       return 'Overweight';
     }
-    else if (_bmi>18.5){
+    else if (_bmi>18.5 && _bmi<25){
       return 'Normal';
     }
+    else if (_bmi>=30 && _bmi<35){
+      return 'Moderately Obese';
+    }
+    else if (_bmi>=35 && _bmi<40){
+      return 'Severely Obese';
+    }
+
+    else if (_bmi>=40 ){
+      return 'Very Severely Obese';
+    }
+
     else{
       return 'Underweight';
     }
